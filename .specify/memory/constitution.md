@@ -1,55 +1,61 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: 0.1.0 → 0.2.0
+List of modified principles:
+- [PRINCIPLE_1_NAME] → Test-Driven Development (TDD)
+- [PRINCIPLE_2_NAME] → Modern Python & Type Hinting
+- [PRINCIPLE_3_NAME] → Clean Code & Readability
+- [PRINCIPLE_4_NAME] → Architectural Decision Records (ADRs)
+- [PRINCIPLE_5_NAME] → Object-Oriented Principles
+Added sections: Technical Stack & Quality Requirements, Code Quality Standards
+Removed sections: None (repurposed existing sections)
+Templates requiring updates:
+- .specify/templates/plan-template.md: ⚠ pending
+- .specify/templates/spec-template.md: ⚠ pending
+- .specify/templates/tasks-template.md: ⚠ pending
+- .specify/templates/commands/*.md: ⚠ pending
+Follow-up TODOs: None
+-->
+# CLI Calculator Project Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Test-Driven Development (TDD)
+All new features and bug fixes MUST be developed using a Test-Driven Development (TDD) approach. Tests MUST be written and approved before implementation begins, following a strict Red-Green-Refactor cycle.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Modern Python & Type Hinting
+All Python code MUST use Python 3.12+ and include comprehensive type hints for all functions, methods, and variables to improve code clarity and maintainability.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Clean Code & Readability
+Code MUST be clean, self-documenting, and easy to read. Adherence to established style guides and best practices is mandatory.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Architectural Decision Records (ADRs)
+All significant architectural decisions MUST be documented using Architectural Decision Records (ADRs) to capture context, options considered, and rationale.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Object-Oriented Principles
+Development MUST adhere to essential Object-Oriented Programming (OOP) principles, including SOLID, DRY (Don't Repeat Yourself), and KISS (Keep It Simple, Stupid).
 
-### [PRINCIPLE_6_NAME]
+## Technical Stack & Quality Requirements
 
+### Technical Stack
+- **Language:** Python 3.12+
+- **Package Manager:** UV
+- **Testing Framework:** pytest
+- **Version Control:** All project files MUST be managed in Git.
 
-[PRINCIPLE__DESCRIPTION]
+### Quality Requirements
+- All tests MUST pass.
+- Code coverage MUST be at least 80%.
+- Data structures MUST utilize Python dataclasses.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Code Quality Standards
+- All functions MUST include type hints on parameters and return types. Example: `def add(a: float, b: float) -> float:`
+- All functions MUST include docstrings explaining what they do. Example: `"""Add two numbers and return the sum."""`
+- Follow PEP 8 naming conventions (lowercase_with_underscores for functions).
+- Lines MUST be under 100 characters.
+- No magic numbers; use named constants. Bad: `if x > 10:` Good: `if x > MAX_POWER_EXPONENT:`
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This Constitution supersedes all other practices. Amendments require documentation, approval, and a migration plan. All Pull Requests (PRs) and code reviews MUST verify compliance with these principles.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 0.2.0 | **Ratified**: 2025-11-14 | **Last Amended**: 2025-11-14
